@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Data } from '@angular/router';
+import { DemoComponent } from '../app/demo/demo.component'
 
 @Component({
   selector: 'app-root',
@@ -15,10 +16,13 @@ export class AppComponent {
   @ViewChild('ageInput')
   age!: ElementRef;
 
+  @ViewChild(DemoComponent, {static:true})
+  demoComp!: DemoComponent;
+
   calculateAge() {
-     let birthYear = new Date(this.dateOfBirth.nativeElement.value).getFullYear();
-     let currentYear = new Date().getFullYear();
-     let age = currentYear - birthYear
-     this.age.nativeElement.value = age;
+    let birthYear = new Date(this.dateOfBirth.nativeElement.value).getFullYear();
+    let currentYear = new Date().getFullYear();
+    let age = currentYear - birthYear
+    this.age.nativeElement.value = age;
   }
 }

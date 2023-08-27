@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div>
   <label>DOB:</label>
   <input type="date" #dobInput (blur)="calculateAge()"/>
@@ -6,4 +7,7 @@
 <div>
   <label>Age:</label>
   <input type="text" #ageInput />
+</div>
+<app-demo ></app-demo>
+{{demoComp.sayHelo()}}
 </div>
